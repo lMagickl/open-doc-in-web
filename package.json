@@ -2,27 +2,45 @@
   "name": "open-doc-in-web",
   "displayName": "Open doc in web",
   "description": "Open the doc page of the function or npm hovered.",
-  "version": "0.0.1",
+  "version": "0.1.0",
+  "publisher": "lMagickl",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lMagickl"
+  },
   "type": "module",
   "engines": {
     "vscode": "^1.75.0"
   },
+  "keywords": [
+    "vscode",
+    "extension",
+    "open",
+    "doc",
+    "web",
+    "open-doc-in-web",
+    "npmjs",
+    "nuget",
+    "phpnet"
+  ],
   "categories": [
     "Other"
   ],
   "activationEvents": [
-    "onCommand:open-doc-in-web.helloWorld"
+    "onCommand:open-doc-in-web.openInWEB"
   ],
-  "main": "./dist/extension.js",
+  "main": "./dist/extension.cjs",
   "contributes": {
     "commands": [
       {
-        "command": "open-doc-in-web.helloWorld",
-        "title": "Hello World"
+        "command": "open-doc-in-web.openInWEB",
+        "title": "Open package in web",
+        "description": "Opens the doc of the specified  package in the default browser"
       }
     ]
   },
   "scripts": {
+    "nodemon": "nodemon --config nodemon.json",
     "vscode:prepublish": "npm run package",
     "compile": "webpack",
     "watch": "webpack --watch",
@@ -31,22 +49,30 @@
     "watch-tests": "tsc -p . -w --outDir out",
     "pretest": "npm run compile-tests && npm run compile && npm run lint",
     "lint": "eslint src --ext ts",
-    "test": "node ./out/test/runTest.js"
+    "test": "node ./out/test/runTest.js",
+    "clean:linux": "rm -rf dist",
+    "clean:windows": "rmdir /s /q dist"
   },
   "devDependencies": {
-    "@types/vscode": "^1.75.0",
     "@types/glob": "^8.0.1",
     "@types/mocha": "^10.0.1",
     "@types/node": "16.x",
+    "@types/vscode": "^1.75.0",
     "@typescript-eslint/eslint-plugin": "^5.49.0",
     "@typescript-eslint/parser": "^5.49.0",
+    "@vscode/test-electron": "^2.2.2",
     "eslint": "^8.33.0",
     "glob": "^8.1.0",
     "mocha": "^10.1.0",
-    "typescript": "^4.9.4",
+    "nodemon": "^2.0.20",
     "ts-loader": "^9.4.2",
+    "typescript": "^4.9.4",
     "webpack": "^5.75.0",
-    "webpack-cli": "^5.0.1",
-    "@vscode/test-electron": "^2.2.2"
+    "webpack-cli": "^5.0.1"
+  },
+  "dependencies": {
+    "@babel/preset-env": "^7.20.2",
+    "@babel/preset-typescript": "^7.21.0",
+    "babel-loader": "^9.1.2"
   }
 }
