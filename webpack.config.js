@@ -3,8 +3,7 @@
 'use strict';
 
 import path from 'path';
-import { fileURLToPath } from "url";
-
+import { fileURLToPath } from 'url';
 
 //@ts-check
 /** @typedef {import('webpack').Configuration} WebpackConfig **/
@@ -12,7 +11,7 @@ import { fileURLToPath } from "url";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const isProduction = process.env.NODE_ENV == "production";
+const isProduction = process.env.NODE_ENV == 'production';
 
 /** @type WebpackConfig */
 const extensionConfig = {
@@ -26,40 +25,41 @@ const extensionConfig = {
     path: path.resolve(__dirname, 'dist'),
     filename: 'extension.cjs',
     library: {
-      type: "module",
+      type: 'module',
     },
     libraryTarget: 'commonjs',
-    chunkFormat: "module",
+    chunkFormat: 'module',
   },
   externals: {
-    vscode: 'commonjs vscode'
+    vscode: 'commonjs vscode',
   },
   module: {
     rules: [
       {
         exclude: /node_modules/,
         test: /\.(js|jsx|ts|tsx)$/,
-        use: "babel-loader",
-      }
-    ]
+        use: 'babel-loader',
+      },
+    ],
   },
+  plugins: [],
   resolve: {
     alias: {
-      "@": path.resolve(__dirname, "src"),
+      '@': path.resolve(__dirname, 'src'),
     },
-    extensions: ['.ts', '.js']
+    extensions: ['.ts', '.js'],
   },
   devtool: 'nosources-source-map',
   infrastructureLogging: {
-    level: "log",
+    level: 'log',
   },
 };
 
 export default () => {
   if (isProduction) {
-    extensionConfig.mode = "production";
+    extensionConfig.mode = 'production';
   } else {
-    extensionConfig.mode = "development";
+    extensionConfig.mode = 'development';
   }
 
   return extensionConfig;

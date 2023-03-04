@@ -2,7 +2,7 @@
     "root": true,
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
-        "ecmaVersion": 6,
+        "ecmaVersion": "latest",
         "sourceType": "module"
     },
     "plugins": [
@@ -10,11 +10,11 @@
     ],
     "rules": {
         "@typescript-eslint/naming-convention": "warn",
-        "@typescript-eslint/semi": "warn",
+        "@typescript-eslint/semi": "error",
         "curly": "warn",
-        "eqeqeq": "warn",
+        "eqeqeq": "error",
         "no-throw-literal": "warn",
-        "semi": "off"
+        "semi": "error"
     },
     "ignorePatterns": [
         "out",
