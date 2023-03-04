@@ -1,9 +1,9 @@
 {
   "name": "open-doc-in-web",
   "displayName": "Open doc in web",
-  "description": "Open the doc page of the function or npm hovered.",
-  "version": "0.1.0",
-  "publisher": "lMagickl",
+  "description": "Open the doc page of the function or npm package hovered.",
+  "version": "0.2.0",
+  "publisher": "lmagickl",
   "repository": {
     "type": "git",
     "url": "https://github.com/lMagickl"
@@ -27,7 +27,8 @@
     "Other"
   ],
   "activationEvents": [
-    "onCommand:open-doc-in-web.openInWEB"
+    "onCommand:open-doc-in-web.openInWEB",
+    "onStartupFinished"
   ],
   "main": "./dist/extension.cjs",
   "contributes": {
@@ -36,6 +37,20 @@
         "command": "open-doc-in-web.openInWEB",
         "title": "Open package in web",
         "description": "Opens the doc of the specified  package in the default browser"
+      }
+      
+    ],
+    "languages": [
+      {
+        "id": "json",
+        "extensions": [".json"]
+      }
+    ],
+    "hoverProvider": [
+      {
+        "language": "json",
+        "scheme": "file",
+        "provideHover": "open-doc-in-web.provideHover"
       }
     ]
   },
@@ -50,8 +65,7 @@
     "pretest": "npm run compile-tests && npm run compile && npm run lint",
     "lint": "eslint src --ext ts",
     "test": "node ./out/test/runTest.js",
-    "clean:linux": "rm -rf dist",
-    "clean:windows": "rmdir /s /q dist"
+    "clean": "rimraf dist out"
   },
   "devDependencies": {
     "@types/glob": "^8.0.1",
@@ -65,6 +79,7 @@
     "glob": "^8.1.0",
     "mocha": "^10.1.0",
     "nodemon": "^2.0.20",
+    "rimraf": "^4.2.0",
     "ts-loader": "^9.4.2",
     "typescript": "^4.9.4",
     "webpack": "^5.75.0",

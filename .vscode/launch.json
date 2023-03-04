@@ -6,7 +6,7 @@
 	"version": "0.2.0",
 	"configurations": [
 		{
-			"name": "Run Extension",
+			"name": "Run",
 			"type": "extensionHost",
 			"request": "launch",
 			"args": [
@@ -15,10 +15,31 @@
 			"outFiles": [
 				"${workspaceFolder}/dist/**/*.js"
 			],
-			"preLaunchTask": "${defaultBuildTask}"
+			"preLaunchTask": "${defaultBuildTask}",
+			"postDebugTask": "terminate watch"
 		},
 		{
-			"name": "Extension Tests",
+			"name": "Run (solo)",
+			"type": "extensionHost",
+			"request": "launch",
+			"args": [
+				"--extensionDevelopmentPath=${workspaceFolder}",
+				"--disable-extensions",
+				"--enable-proposed-api=lMagickl.open-doc-in-web,steoates.autoimport"
+			],
+			"env": {
+				"VSCODE_LOG_LEVEL": "trace",
+				"VSCODE_DISABLE_EXTENSIONS": "true",
+				"VSCODE_ALLOW_IO": "true"
+			},
+			"outFiles": [
+				"${workspaceFolder}/dist/**/*.js"
+			],
+			"preLaunchTask": "${defaultBuildTask}",
+			"postDebugTask": "terminate watch"
+		},
+		{
+			"name": "Run Tests",
 			"type": "extensionHost",
 			"request": "launch",
 			"args": [
@@ -29,7 +50,8 @@
 				"${workspaceFolder}/out/**/*.js",
 				"${workspaceFolder}/dist/**/*.js"
 			],
-			"preLaunchTask": "tasks: watch-tests"
+			"preLaunchTask": "tasks: watch-tests",
+			"postDebugTask": "terminate watch"
 		}
 	]
 }
