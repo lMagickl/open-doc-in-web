@@ -4,6 +4,7 @@
   "description": "Open the doc page of the function or npm package hovered.",
   "version": "0.2.0",
   "publisher": "lMagickl",
+  "icon": "logo.png",
   "repository": {
     "type": "git",
     "url": "https://github.com/lMagickl"
