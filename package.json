@@ -2,7 +2,7 @@
   "name": "open-doc-in-web",
   "displayName": "Open doc in web",
   "description": "Open the doc page of the function or npm package hovered.",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "publisher": "lMagickl",
   "icon": "logo.png",
   "repository": {
@@ -29,8 +29,10 @@
     "Other"
   ],
   "activationEvents": [
+    "onStartupFinished",
     "onCommand:open-doc-in-web.openInWEB",
-    "onStartupFinished"
+    "onLanguage:json",
+    "onLanguage:jsonc"
   ],
   "main": "./dist/extension.cjs",
   "contributes": {

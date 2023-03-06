@@ -22,7 +22,7 @@ export function activate(context: ExtensionContext) {
   outputChannel.appendLine('command is initialized !');
 
   let hoverDisposable = languages.registerHoverProvider(
-    { scheme: 'file', language: 'json' },
+    [{ scheme: 'file', language: 'json' }, { scheme: 'file', language: 'jsonc' }],
     { provideHover }
   );
   outputChannel.appendLine('hover is initialized !');
