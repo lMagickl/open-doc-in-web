@@ -58,7 +58,7 @@
     ]
   },
   "scripts": {
-    "release": "vsce package",
+    "release": "vsce package --out ../releases/",
     "vscode:prepublish": "npm run package",
     "compile": "webpack",
     "watch": "webpack --watch",
