@@ -3,7 +3,7 @@
   "displayName": "Open doc in web",
   "description": "Open the doc page of the function or npm package hovered.",
   "version": "0.2.0",
-  "publisher": "lmagickl",
+  "publisher": "lMagickl",
   "repository": {
     "type": "git",
     "url": "https://github.com/lMagickl"
@@ -38,12 +38,13 @@
         "title": "Open package in web",
         "description": "Opens the doc of the specified  package in the default browser"
       }
-      
     ],
     "languages": [
       {
         "id": "json",
-        "extensions": [".json"]
+        "extensions": [
+          ".json"
+        ]
       }
     ],
     "hoverProvider": [
@@ -55,7 +56,6 @@
     ]
   },
   "scripts": {
-    "nodemon": "nodemon --config nodemon.json",
     "vscode:prepublish": "npm run package",
     "compile": "webpack",
     "watch": "webpack --watch",
@@ -78,7 +78,6 @@
     "eslint": "^8.33.0",
     "glob": "^8.1.0",
     "mocha": "^10.1.0",
-    "nodemon": "^2.0.20",
     "rimraf": "^4.2.0",
     "ts-loader": "^9.4.2",
     "typescript": "^4.9.4",
