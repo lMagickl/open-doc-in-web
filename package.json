@@ -22,7 +22,8 @@
     "open-doc-in-web",
     "npmjs",
     "nuget",
-    "phpnet"
+    "phpnet",
+    "package.json"
   ],
   "categories": [
     "Other"
