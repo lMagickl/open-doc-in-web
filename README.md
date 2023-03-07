@@ -1,7 +1,7 @@
 # Open doc in web
 
 <p align="center">
-  <a href="https://marketplace.visualstudio.com/items?itemName=lmagickl.open-in-web" target="_blank"><img src="https://img.shields.io/visual-studio-marketplace/v/lmagickl.open-doc-in-web?label=VS%20Code%20Marketplace&logo=visual-studio-code&style=for-the-badge" alt="Visual Studio Marketplace Version"></a>
+  <a href="https://marketplace.visualstudio.com/items?itemName=lmagickl.open-doc-in-web" target="_blank"><img src="https://img.shields.io/visual-studio-marketplace/v/lmagickl.open-doc-in-web?label=VS%20Code%20Marketplace&logo=visual-studio-code&logoColor=blue&style=for-the-badge" alt="Visual Studio Marketplace Version"></a>
 </p>
 
 ## Preview
