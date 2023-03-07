@@ -1,9 +1,13 @@
-# Change Log
+# Open doc in web Changelog
 
-All notable changes to the "open-doc-in-web" extension will be documented in this file.
+## Version 0.2.1
+### Bug Fixes
+* fix jsonc language
 
-Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
+## Version 0.2.0
+### Enhancements
+* add hover feature
 
-## [Unreleased]
-
-- Initial release
+## Version 0.1.0
+### Enhancements
+* first commit with only command feature
