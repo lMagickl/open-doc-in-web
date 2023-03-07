@@ -38,9 +38,8 @@
   "contributes": {
     "commands": [
       {
-        "command": "open-doc-in-web.openInWEB",
-        "title": "Open package in web",
-        "description": "Opens the doc of the specified  package in the default browser"
+        "command": "open-doc-in-web.opendocInWEB",
+        "title": "Open package/documentation in web"
       }
     ],
     "languages": [

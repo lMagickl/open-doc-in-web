@@ -16,7 +16,7 @@ const outputChannel = window.createOutputChannel('Open doc in web');
 
 export function activate(context: ExtensionContext) {
   let commandDisposable = commands.registerCommand(
-    'open-doc-in-web.openInWEB',
+    'open-doc-in-web.opendocInWEB',
     provideCommand
   );
   outputChannel.appendLine('command is initialized !');
@@ -69,8 +69,9 @@ async function provideHover(document: TextDocument, position: Position) {
           const packageName = match.groups!.name;
           const packageVersion = match.groups!.version;
           const link = `https://www.npmjs.com/package/${packageName}`;
-          const content = new MarkdownString(`Link to the doc => ${link}`);
-          outputChannel.appendLine(`Link created => ${link}`);
+          const content = new MarkdownString(`Link to the doc npmjs: \n\n${link}`);
+          outputChannel.appendLine(`Link to npmjs created => ${link}`);
+
           return new Hover(content);
         }
       }
