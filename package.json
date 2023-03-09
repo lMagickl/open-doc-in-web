@@ -2,7 +2,7 @@
   "name": "open-doc-in-web",
   "displayName": "Open doc in web",
   "description": "Open the doc page of the function or npm package hovered.",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "publisher": "lMagickl",
   "icon": "logo.png",
   "repository": {

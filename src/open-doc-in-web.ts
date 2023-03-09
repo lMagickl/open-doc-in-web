@@ -22,7 +22,10 @@ export function activate(context: ExtensionContext) {
   outputChannel.appendLine('command is initialized !');
 
   let hoverDisposable = languages.registerHoverProvider(
-    [{ scheme: 'file', language: 'json' }, { scheme: 'file', language: 'jsonc' }],
+    [
+      { scheme: 'file', language: 'json' },
+      { scheme: 'file', language: 'jsonc' },
+    ],
     { provideHover }
   );
   outputChannel.appendLine('hover is initialized !');
@@ -39,10 +42,8 @@ async function provideHover(document: TextDocument, position: Position) {
   const packageJson: string =
     workspace.getConfiguration().get('npm.packageJsonFilename') ||
     'package.json';
-  const packageJsonUri = Uri.joinPath(
-    Uri.file(workspace.workspaceFolders![0].uri.fsPath) || '',
-    packageJson
-  );
+  let packageJsonUri: Uri = Uri.file('');
+  packageJsonUri = Uri.file(document.uri.fsPath);
   const textDocument = await workspace.openTextDocument(packageJsonUri);
   const sectionRegex = /(dependencies|devDependencies|peerDependencies)/;
 
@@ -69,7 +70,9 @@ async function provideHover(document: TextDocument, position: Position) {
           const packageName = match.groups!.name;
           const packageVersion = match.groups!.version;
           const link = `https://www.npmjs.com/package/${packageName}`;
-          const content = new MarkdownString(`Link to the doc npmjs: \n\n${link}`);
+          const content = new MarkdownString(
+            `Link to the doc npmjs: \n\n${link}`
+          );
           outputChannel.appendLine(`Link to npmjs created => ${link}`);
 
           return new Hover(content);
